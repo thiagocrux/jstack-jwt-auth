@@ -10,5 +10,5 @@ export interface IResponse {
 }
 
 export interface IController {
-  handle(request: IRequest, response: IResponse): Promise<IResponse>;
+  handle(request: IRequest): Promise<IResponse>;
 }
