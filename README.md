@@ -84,6 +84,16 @@ This section describes the available scripts in the `package.json` file and thei
   pnpm start
   ```
 
+### Git hooks
+
+- #### `prepare`
+
+  Automatically configures Git hooks (via `husky`) before each commit.
+
+  ```bash
+  pnpm prepare
+  ```
+
 ## Useful links
 
 - [JStack](https://app.jstack.com.br/)
