@@ -96,7 +96,8 @@ This section describes the available scripts in the `package.json` file and thei
 
 ## Useful links
 
-- [JStack](https://app.jstack.com.br/)
+- [Autenticação JWT em APIs Node.js](https://app.jstack.com.br/classroom/lives/autenticacao-jwt-em-apis-node-js)
+- [Autorização baseada em cargos RBAC em APIs Node.js](https://app.jstack.com.br/classroom/lives/autorizacao-baseada-em-cargos-rbac-em-apis-node-js/)
 
 ## License
 
