@@ -1,5 +1,5 @@
 {
-  "name": "jwt-auth",
+  "name": "node-auth",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Implementation of JWT authentication with RBAC (Role-Based Access Control) and refresh token in a Node.js API.",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",

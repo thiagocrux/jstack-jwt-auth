@@ -1,6 +1,6 @@
-# JStack's Live #006
+# Node.js Authentication
 
-Implementation of JWT authentication in a Node.js API.
+Implementation of JWT authentication with RBAC (Role-Based Access Control) and refresh token in a Node.js API.
 
 ## Technologies
 
@@ -40,7 +40,7 @@ cd jstack-live-006
 pnpm install
 ```
 
-4. Create a `.env` file on the project's root and set the environment variables updating the `user`, `password` and the `database_name`. It may be necessary to update the hostname (localhost) and database port (5432) if your Postgres installation is configured differently.
+4. Create a `.env` file on the project's root and set the environment variables updating the `user`, `password` and the `database_name`. It may be necessary to update the hostname (localhost) and database port (5432) if your Postgres installation is configured differently. It is also necessary to set the `JWT_SECRET` with a JWT secret so the authentication works correctly.
 
 ```
 # Environment variables declared in this file are automatically made available to Prisma.
@@ -50,6 +50,7 @@ pnpm install
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=public"
+JWT_SECRET=
 ```
 
 ## Available scripts
@@ -96,8 +97,8 @@ This section describes the available scripts in the `package.json` file and thei
 
 ## Useful links
 
-- [Autenticação JWT em APIs Node.js](https://app.jstack.com.br/classroom/lives/autenticacao-jwt-em-apis-node-js)
-- [Autorização baseada em cargos RBAC em APIs Node.js](https://app.jstack.com.br/classroom/lives/autorizacao-baseada-em-cargos-rbac-em-apis-node-js/)
+- [Live #006 - Autenticação JWT em APIs Node.js](https://app.jstack.com.br/classroom/lives/autenticacao-jwt-em-apis-node-js)
+- [Live #007 - Autorização baseada em cargos RBAC em APIs Node.js](https://app.jstack.com.br/classroom/lives/autorizacao-baseada-em-cargos-rbac-em-apis-node-js/)
 
 ## License
 
