@@ -3,6 +3,7 @@ import { z, ZodError } from 'zod';
 import { IController, IResponse } from '../../interfaces/IController';
 import { IRequest } from '../../interfaces/IRequest';
 import { InvalidCredentials } from '../errors/InvalidCredentials';
+import { SignInUseCase } from '../useCases/SignInUseCase';
 
 const schema = z.object({
   email: z.string().email().min(1),
