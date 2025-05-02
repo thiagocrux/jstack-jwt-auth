@@ -1,6 +1,7 @@
 import { z, ZodError } from 'zod';
 
-import { IController, IRequest, IResponse } from '../../interfaces/IController';
+import { IController, IResponse } from '../../interfaces/IController';
+import { IRequest } from '../../interfaces/IRequest';
 import { AccountAlreadyExists } from '../errors/AccountAlreadyExists';
 import { SignUpUseCase } from '../useCases/SignUpUseCase';
 

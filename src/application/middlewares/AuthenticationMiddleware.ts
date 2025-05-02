@@ -1,12 +1,7 @@
 import { verify } from 'jsonwebtoken';
 
-import {
-  IData,
-  IMiddleware,
-  IRequest,
-  IResponse,
-} from '../../interfaces/IMiddleware';
-
+import { IData, IMiddleware, IResponse } from '../../interfaces/IMiddleware';
+import { IRequest } from '../../interfaces/IRequest';
 import { env } from '../config/env';
 
 export class AuthenticationMiddleware implements IMiddleware {
