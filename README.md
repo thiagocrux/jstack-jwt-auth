@@ -95,10 +95,29 @@ This section describes the available scripts in the `package.json` file and thei
   pnpm prepare
   ```
 
+### Git hooks
+
+- #### `prisma:migrate`
+
+  creates and applies a new database migration based on your Prisma schema changes, resets the database (if needed), and generates Prisma Client. It's used during development to sync your schema with the database.
+
+  ```bash
+  pnpm prisma:migrate
+  ```
+
+- #### `prisma:studio`
+
+  Opens an interactive web-based GUI (at localhost:5555) to view and edit your database tables directly. It helps you explore and manage data visually.
+
+  ```bash
+  pnpm prisma:studio
+  ```
+
 ## Useful links
 
 - [Live #006 - Autenticação JWT em APIs Node.js](https://app.jstack.com.br/classroom/lives/autenticacao-jwt-em-apis-node-js)
 - [Live #007 - Autorização baseada em cargos RBAC em APIs Node.js](https://app.jstack.com.br/classroom/lives/autorizacao-baseada-em-cargos-rbac-em-apis-node-js/)
+- [Live #008 - RBAC: Criando um sistema de controle de acesso gerenciável ](https://app.jstack.com.br/classroom/lives/rbac-criando-um-sistema-de-controle-de-acesso-gerenciavel/)
 
 ## License
 
