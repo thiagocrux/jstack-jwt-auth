@@ -1,8 +1,12 @@
 import { IData, IMiddleware, IResponse } from '../../interfaces/IMiddleware';
 import { IRequest } from '../../interfaces/IRequest';
+import { GetRolePermissionsUseCase } from '../useCases/GetRolePermissionsUseCase';
 
 export class AuthorizationMiddleware implements IMiddleware {
-  constructor(private readonly authorizedRoles: string[]) {}
+  constructor(
+    private readonly requiredPermissions: string[],
+    private readonly getRolePermissionsUseCase: GetRolePermissionsUseCase
+  ) {}
 
   async handle(request: IRequest): Promise<IResponse | IData> {
     if (!request.account) {
@@ -14,7 +18,15 @@ export class AuthorizationMiddleware implements IMiddleware {
       };
     }
 
-    if (!this.authorizedRoles.includes(request.account.role)) {
+    const { permissionCodes } = await this.getRolePermissionsUseCase.execute({
+      roleId: request.account?.role,
+    });
+
+    const isUserAllowed = this.requiredPermissions.some((code) => {
+      return permissionCodes.includes(code);
+    });
+
+    if (!isUserAllowed) {
       return {
         statusCode: 403,
         body: {

@@ -24,13 +24,14 @@ app.get(
 app.get(
   '/leads',
   middlewareAdapter(makeAuthenticationMiddleware()),
+  middlewareAdapter(makeAuthorizationMiddleware(['leads:read'])),
   routeAdapter(makeListLeadsController())
 );
 
 app.post(
   '/leads',
   middlewareAdapter(makeAuthenticationMiddleware()),
-  middlewareAdapter(makeAuthorizationMiddleware(['ADMIN'])),
+  middlewareAdapter(makeAuthorizationMiddleware(['leads:write'])),
   async (request, response) => {
     response.json({ created: true });
   }
