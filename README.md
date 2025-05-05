@@ -50,7 +50,7 @@ pnpm install
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=public"
-JWT_SECRET=
+JWT_SECRET="your_jwt_secret"
 ```
 
 ## Available scripts
