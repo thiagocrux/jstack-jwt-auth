@@ -53,6 +53,12 @@ DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=pub
 JWT_SECRET="your_jwt_secret"
 ```
 
+5. Generate the Prisma client
+
+```
+npx prisma generate
+```
+
 ## Available scripts
 
 This section describes the available scripts in the `package.json` file and their functionalities.
@@ -97,9 +103,17 @@ This section describes the available scripts in the `package.json` file and thei
 
 ### Git hooks
 
+- #### `prisma:generate`
+
+  Generates the Prisma client based on the data model defined in the `schema.prisma` file.
+
+  ```bash
+  pnpm prisma:generate
+  ```
+
 - #### `prisma:migrate`
 
-  creates and applies a new database migration based on your Prisma schema changes, resets the database (if needed), and generates Prisma Client. It's used during development to sync your schema with the database.
+  Creates and applies a new database migration based on your Prisma schema changes, resets the database (if needed), and generates Prisma Client. It's used during development to sync your schema with the database.
 
   ```bash
   pnpm prisma:migrate
