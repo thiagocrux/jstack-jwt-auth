@@ -40,15 +40,9 @@ cd jstack-live-006
 pnpm install
 ```
 
-4. Create a `.env` file on the project's root and set the environment variables updating the `user`, `password` and the `database_name`. It may be necessary to update the hostname (localhost) and database port (5432) if your Postgres installation is configured differently. It is also necessary to set the `JWT_SECRET` with a JWT secret so the authentication works correctly.
+4. Create a `.env` file on the project's root and set the environment variables updating the `user`, `password` and the `database_name`. It may be necessary to update the hostname (localhost) and database port (5432) if your Postgres installation is configured differently. It is also necessary to set the `JWT_SECRET` variable so the authentication works correctly.
 
 ```
-# Environment variables declared in this file are automatically made available to Prisma.
-# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
-
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
-
 DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=public"
 JWT_SECRET="your_jwt_secret"
 ```
@@ -101,7 +95,7 @@ This section describes the available scripts in the `package.json` file and thei
   pnpm prepare
   ```
 
-### Git hooks
+### Prisma
 
 - #### `prisma:generate`
 
