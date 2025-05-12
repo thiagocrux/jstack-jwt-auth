@@ -121,7 +121,7 @@ This section describes the available scripts in the `package.json` file and thei
   pnpm prisma:studio
   ```
 
-## Useful links
+## Related links
 
 - [Live #006 - Autenticação JWT em APIs Node.js](https://app.jstack.com.br/classroom/lives/autenticacao-jwt-em-apis-node-js)
 - [Live #007 - Autorização baseada em cargos RBAC em APIs Node.js](https://app.jstack.com.br/classroom/lives/autorizacao-baseada-em-cargos-rbac-em-apis-node-js/)
