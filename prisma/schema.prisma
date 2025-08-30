@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Account {
-  id       String @id @db.Uuid @default(uuid())
+  id       String @id @default(uuid()) @db.Uuid
   name     String
   email    String @unique
   password String
@@ -26,17 +26,17 @@ model Account {
 }
 
 model Role {
-  id       String @id @db.Uuid @default(uuid())
-  name     String
+  id   String @id @default(uuid()) @db.Uuid
+  name String @unique
 
-  accounts Account[]
+  accounts    Account[]
   permissions RolePermission[]
 
   @@map("roles")
 }
 
 model Permission {
-  id   String @id @db.Uuid @default(uuid())
+  id   String @id @default(uuid()) @db.Uuid
   name String
   code String @unique
 
@@ -53,5 +53,5 @@ model RolePermission {
   permission Permission @relation(fields: [permissionCode], references: [code], onDelete: Cascade)
 
   @@id([roleId, permissionCode])
-  @@map("roles_permission")
+  @@map("role_permission")
 }

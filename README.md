@@ -1,6 +1,6 @@
 # Node.js Authentication
 
-Implementation of JWT authentication with RBAC (Role-Based Access Control) and refresh token in a Node.js API.
+Implementation of JWT authentication with RBAC (Role-Based Access Control) in a Node.js API.
 
 ## Technologies
 
@@ -14,9 +14,11 @@ These are some of the tecnologies used in this project:
 - `husky`: A tool for adding Git hooks to automate tasks like linting, testing, or commits in JavaScript/Node.js projects.
 - `jsonwebtoken`: A library for creating and verifying JSON Web Tokens (JWT) in Node.js.
 - `lint-staged`: Runs linters on Git staged files.
+- `node`: JavaScript runtime built on Chrome's V8 engine, used for building fast and scalable server-side applications.
 - `prettier`: A code formatter.
 - `prisma`: A modern, type-safe database toolkit and ORM for Node.js and TypeScript.
 - `tsx`: A command-line tool and Node.js enhancement that allows you to execute TypeScript files directly without needing to explicitly compile them to JavaScript first.
+- `typescript`: Strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
 _For more information about other dependencies, see the `package.json` file._
 
@@ -25,32 +27,37 @@ _For more information about other dependencies, see the `package.json` file._
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/thiagocrux/jstack-live-006.git
+git clone https://github.com/thiagocrux/jstack-jwt-auth.git
 ```
 
 2. Browse to the project folder:
 
 ```bash
-cd jstack-live-006
+cd jstack-jwt-auth
 ```
 
 3. Install dependencies:
 
-```
+```bash
 pnpm install
 ```
 
-4. Create a `.env` file on the project's root and set the environment variables updating the `user`, `password` and the `database_name`. It may be necessary to update the hostname (localhost) and database port (5432) if your Postgres installation is configured differently. It is also necessary to set the `JWT_SECRET` variable so the authentication works correctly.
+4. Create a `.env` file in the root of the project and set the environment variables as described below:
 
-```
-DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=public"
-JWT_SECRET="your_jwt_secret"
+```bash
+# DATABASE_URL: The connection string for your PostgreSQL database.
+# Update <user>, <password>, and <database_name> as needed.
+# You may also need to change <host> (default: localhost) and <port> (default: 5432) if your PostgreSQL setup is different.
+DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<database_name>?schema=public"
+
+# JWT_SECRET: Secret key used for signing JWT tokens.
+JWT_SECRET=""
 ```
 
-5. Generate the Prisma client
+5. Create the database tables and generate the Prisma client
 
-```
-npx prisma generate
+```bash
+npx prisma migrate dev
 ```
 
 ## Available scripts
