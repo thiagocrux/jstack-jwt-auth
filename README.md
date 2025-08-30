@@ -54,7 +54,7 @@ DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<database_name>?schem
 JWT_SECRET=""
 ```
 
-5. Create the database tables and generate the Prisma client
+5. Create the database, the tables and generate the Prisma client
 
 ```bash
 npx prisma migrate dev
